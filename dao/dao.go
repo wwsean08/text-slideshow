@@ -1,9 +1,9 @@
 package dao
 
 import (
-	"os"
 	log "github.com/Sirupsen/logrus"
 	"io/ioutil"
+	"os"
 	"time"
 )
 

@@ -24,9 +24,9 @@ import (
 	"fmt"
 	"os"
 
+	log "github.com/Sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
-	log "github.com/Sirupsen/logrus"
 	"github.com/wwsean08/text-slideshow/dao"
 )
 
@@ -50,7 +50,7 @@ to quickly create a Cobra application.`,
 		slides := make([]dao.Slide, len(inputFiles))
 		for i, file := range inputFiles {
 			tmp := dao.Slide{
-				File: file,
+				File:      file,
 				SlideTime: viper.GetDuration("showTime"),
 			}
 			slides[i] = tmp
