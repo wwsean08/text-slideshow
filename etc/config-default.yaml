@@ -1,0 +1,7 @@
+---
+outputFile: ./output/test.txt
+skipEmptyFiles: true
+showTime: 30s
+inputFiles:
+  - ./input/test1.txt
+  - ./input/test2.txt
