@@ -24,4 +24,4 @@ deploy:
   on:
     repo: wwsean08/text-slideshow
     tags: true
-    go: 1.9.x
+    go: '1.9.x'
