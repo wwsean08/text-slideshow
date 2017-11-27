@@ -28,7 +28,9 @@ repo_branch:=$(subst /,-,$(repo_branch))
 default: build
 
 build:
-		CGO_ENABLED=0 GOOS=$(GOOS) GOARCH=$(GOARCH) $(go) build -v -ldflags "-X main.version=$(version) -X main.repoBranch=$(repo_branch)" -o ./bin/$(GOOS)_$(GOARCH)/$(pkg_name)$(BIN_EXTENSION)
+		CGO_ENABLED=0 GOOS=linux GOARCH=amd64 $(go) build -v -ldflags "-X main.version=$(version) -X main.repoBranch=$(repo_branch)" -o ./bin/linux_amd64/$(pkg_name)$(BIN_EXTENSION)
+		CGO_ENABLED=0 GOOS=darwin GOARCH=amd64 $(go) build -v -ldflags "-X main.version=$(version) -X main.repoBranch=$(repo_branch)" -o ./bin/darwin_amd64/$(pkg_name)$(BIN_EXTENSION)
+		CGO_ENABLED=0 GOOS=windows GOARCH=amd64 $(go) build -v -ldflags "-X main.version=$(version) -X main.repoBranch=$(repo_branch)" -o ./bin/windows_amd64/$(pkg_name).exe
 
 clean:
 		rm -rf bin

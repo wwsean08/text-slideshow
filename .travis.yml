@@ -7,3 +7,20 @@ go:
 script:
   - make test
   - make
+  - sha1sum bin/linux_amd64/text-slideshow > bin/linux_amd64/text-slideshow.sha1
+  - sha1sum bin/darwin_amd64/text-slideshow > bin/darwin_amd64/text-slideshow.sha1
+  - sha1sum bin/windows_amd64/text-slideshow.exe > bin/windows_amd64/text-slideshow.exe.sha1
+
+deploy:
+  provider: releases
+  api_key:
+    secure: BB+RIi5/DEFKzi63sY2GvgG44/jnZdrKkXGL+B5vUI825fTP/NVJIuE5dTOvZShQojYuO6ZLyDiDSFB8Z4Dwlq4hupLRLhwDapAk2pl4imHvvljZpVl/HheiyLwqsHpiR78TKkHwf169YO3GS9mvn4Ux+kBueJ6BTBMC4A4KLa4qJxKmn18xbRXPgw6h5Q6PMAytmEKO4AcfJuzDMOt6c7R45HVMP+gNdm/OQZoll7caz2ujFNcy8sUg6jG+/A/gCavcwb32tlVSm3pVr92f5o0yXnuLPwRjG4GKlsnDKcSdCwOf47H/H2hfuN6JGwYgVOyZzsWO6LBDCEgDO9elA8ym6/Bq0cjfcdN1H3anCX91QHJZ6KCedhOLV7Wuug0FOdKs2k+AOjuXAmasscmOHFPHxvwSLzcIu89Q7ZWLtmQIXSB64Spwd9ttRuHsDdJfV0aHtIca1KzArAbmO24bDEQOgTpwB6/6pvKYJAFrA9juClsSEOdVMeYE6An+HLNxrNN02H3FVJmwXn1FjK0mTCNHFHv36ANA8eafJhS4WX7+vsLCwTFS//AADz/A6B1ltFejTMYlXWMU6YGviB4eCjMoy/EJIRyHlXTnUv1YCWdvN6MUO4w+kA9T8+WUcPuv7MyowSZj1FEwW5JzWmfaKANlzSvhZTFs11M5NDvK3+c=
+  file:
+    - bin/linux_amd64/text-slideshow
+    - bin/linux_amd64/text-slideshow.sha1
+    - bin/windows_amd64/text-slideshow.exe
+    - bin/windows_amd64/text-slideshow.exe.sha1
+  skip_cleanup: true
+  on:
+    repo: wwsean08/text-slideshow
+    tags: true
