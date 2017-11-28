@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 	"time"
+	"github.com/spf13/viper"
 )
 
 type SlideshowDAO interface {
@@ -43,6 +44,11 @@ func (dao fileSlideShow) Run() {
 				log.Info("Error reading file %s, received error %v", slide.File, err)
 			}
 			file.Close()
+			if byteRepr == nil || len(byteRepr) == 0 {
+				if viper.GetBool("skipEmptyFiles") {
+					continue
+				}
+			}
 
 			outFile, err := os.OpenFile(dao.outputFile, os.O_TRUNC|os.O_WRONLY, 0777)
 			if err != nil {
