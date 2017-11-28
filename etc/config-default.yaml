@@ -1,6 +1,7 @@
 ---
 outputFile: ./output/test.txt
 skipEmptyFiles: true
+# showTime is in the duration format for viper to parse, see https://golang.org/pkg/time/#ParseDuration
 showTime: 30s
 inputFiles:
   - ./input/test1.txt
