@@ -36,12 +36,8 @@ var cfgFile string
 var RootCmd = &cobra.Command{
 	Use:   "text-slideshow",
 	Short: "An application to overwrite text files with contents of other text files on a schedule",
-	Long: `A longer description that spans multiple lines and likely contains
-examples and usage of using your application. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Long: `Set the contents of the output file based on the contents of various files
+at a given interval based on the config file.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
