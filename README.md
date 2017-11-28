@@ -1,5 +1,5 @@
 # text-slideshow
-This was created at the request of twitch.tv/typeForced for his stream in order to swap between text files automatically on stream.  
+This was created at the request of https://twitch.tv/typeForced for his stream in order to swap between text files automatically on stream.  
 
 ## Usage
 Follow the config file [here](etc/config-default.yaml) as an example.  This file can either be placed in your home directory as ".text-slideshow" or you can pass in the config file path via the ```--config``` option on the command line if you don't want to keep it there.
