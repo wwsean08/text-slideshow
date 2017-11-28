@@ -2,7 +2,7 @@ ifndef GOPATH
 $(warning You need to set up a GOPATH. Run "go help gopath".)
 endif
 
-version:=0.0.2
+version:=0.0.3
 pkg_name:=text-slideshow
 git:=$(strip $(shell which git 2> /dev/null))
 go:=$(strip $(shell which go 2> /dev/null))
